@@ -1,6 +1,6 @@
-# session module
-from internal.menu import Menu
-
+"""session module
+"""
+from package.hook.menu import Menu
 
 # start a new session:
 def main():
@@ -10,8 +10,8 @@ def main():
         interaction = Menu()    # start a new interactive api object
 
         IN_MAIN_MENU = True
-
-        while IN_MAIN_MENU:                     # while in main menu
+        # while in main menu
+        while IN_MAIN_MENU:
             u_input = interaction.main_ui()
 
             if u_input == '1':
@@ -19,12 +19,16 @@ def main():
 
             elif u_input == '2':
                 is_logged, u = False, None
+
+                # loop back if incorrect id or pin
                 while not is_logged:
                     is_logged, u = interaction.main_attempt_login(accounts, u)
+
+                # otherwise, log in:
                 else:
                     IN_USER_MENU = True
-
-                    while IN_USER_MENU:         # while in logged in menu
+                    # while logged in
+                    while IN_USER_MENU:
                         u_input = interaction.user_ui()
                         if u_input == '1':
                             print(f'Balance: {u.balance}\n')

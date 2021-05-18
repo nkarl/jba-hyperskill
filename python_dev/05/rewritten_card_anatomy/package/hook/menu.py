@@ -1,6 +1,6 @@
 """menu module
 """
-from .card import BankCard
+from package.back_end.card import BankCard
 
 class Menu:
     """text display api for the session's menus
