@@ -4,7 +4,6 @@ random.seed()
 
 class BankAccount:
     IIN = '400000'
-    checksum = str(random.randint(0, 9))
     def __init__(self):
         self.user_id = ''
         self.user_id += self.IIN
@@ -14,11 +13,29 @@ class BankAccount:
             x = str(random.randint(0, 9))
             self.user_id += x
         
+        self.checksum = self.__generate_checksum(self.user_id)
         self.user_id += self.checksum
         for i in range(4):
             p = str(random.randint(0, 9))
             self.user_pin += p
                 
+    def __generate_checksum(self, id):
+        ac = list(map(int, id[0:15]))
+        mult_odd = [v * 2 if i % 2 == 0 else v for i, v in enumerate(ac)]
+        sub_9_over_9 = list(map(lambda x: x - 9 if x > 9 else x, mult_odd))
+        add_all = sum(sub_9_over_9)
+        temp = add_all
+        while temp % 10 != 0:
+            temp += 1
+        return str(temp - add_all)
+
+
+    def verify_checksum(self, card_num):
+        this_checksum = self.__generate_checksum(card_num)
+        if card_num[-1] == this_checksum:
+            return True
+        else:
+            return False
 
 def print_menu():
     print('1. Create an account')
@@ -42,6 +59,7 @@ while True:
         print(f'Your card has been created')
         print('Your card number:')
         print(u.user_id)
+        print(u.verify_checksum(u.user_id))
         print('Your card PIN:')
         print(u.user_pin)
         print()
