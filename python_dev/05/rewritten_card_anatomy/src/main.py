@@ -1,6 +1,6 @@
 """session module
 """
-from package.hook.menu import Menu
+from backend.menu import Menu
 
 # start a new session:
 def main():
@@ -22,7 +22,7 @@ def main():
 
                 # loop back if incorrect id or pin
                 while not is_logged:
-                    is_logged, u = interaction.main_attempt_login(accounts, u)
+                    is_logged, u = interaction.main_attempt_login(accounts)
 
                 # otherwise, log in:
                 else:

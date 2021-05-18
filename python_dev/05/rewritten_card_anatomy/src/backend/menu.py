@@ -1,6 +1,6 @@
 """menu module
 """
-from package.back_end.card import BankCard
+from .card import BankCard
 
 class Menu:
     """text display api for the session's menus
@@ -49,7 +49,7 @@ class Menu:
         return u, acc_list
     
 
-    def main_attempt_login(self, acc_list: dict, u_acc: BankCard):
+    def main_attempt_login(self, acc_list: dict):
         """
         print an interactive state for each login attempt
 
