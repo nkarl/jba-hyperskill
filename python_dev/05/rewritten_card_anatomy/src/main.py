@@ -3,7 +3,7 @@
 from backend.menu import Menu
 
 # start a new session:
-def main():
+def session():
     session = True
     while session is True:
         accounts = dict()       # list of accounts created for this session
@@ -43,4 +43,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    session()

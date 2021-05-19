@@ -57,3 +57,4 @@ class BankCard:
         """
         new_pin = [random.randint(0,9) for i in range(self.pin_len)]
         return ''.join(map(str, new_pin))
+
