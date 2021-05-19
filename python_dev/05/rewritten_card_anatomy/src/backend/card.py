@@ -17,8 +17,7 @@ class BankCard:
 
 
     def __generate_checksum(self, sequence: list):
-        """
-        generate a checksum for a given sequence
+        """generate a checksum for a given sequence
 
         :param sequence str: the sequence of digits
         """
@@ -35,10 +34,9 @@ class BankCard:
             ee += 1
         return (ee - dd)
 
-    def __generate_card_id(self):
-        """
-        generate a new unique card id
 
+    def __generate_card_id(self):
+        """generate a new unique card id
         """
         # first, generate a sequence of random numbers, length defined as id_len:
         unique_id = [random.randint(0, 9) for i in range(self.id_len)]
@@ -50,10 +48,9 @@ class BankCard:
         id = ''.join(map(str, card_id + [checksum]))
         return id
 
-    def __generate_pin(self):
-        """
-        generate a new pin
 
+    def __generate_pin(self):
+        """generate a new pin
         """
         new_pin = [random.randint(0,9) for i in range(self.pin_len)]
         return ''.join(map(str, new_pin))

@@ -7,26 +7,21 @@ class Menu:
     """
 
     def main_ui(self):
-        """
-        print main menu
-
+        """print main menu
         """
         print('1. Create an account\n2. Log into account\n0. Exit')
         return input()
 
 
     def user_ui(self):
-        """
-        print user menu (required being logged in)
-
+        """print user menu (required being logged in)
         """
         print('1. Balance\n2. Log out\n0. Exit')
         return input()
 
 
     def __display_created_account(self, u_id: str, u_pin: str):
-        """
-        print created account info (id and pin)
+        """print created account info (id and pin)
 
         :param u_id str: [newly created id] :param u_pin str: [newly created pin]
         """
@@ -34,8 +29,7 @@ class Menu:
 
 
     def main_create(self, acc_list: dict):
-        """
-        create a new account for the user
+        """create a new account for the user
 
         :param acc_list dict: [list of accounts created for this interactive session]
         """
@@ -50,8 +44,7 @@ class Menu:
     
 
     def main_attempt_login(self, acc_list: dict):
-        """
-        print an interactive state for each login attempt
+        """print an interactive state for each login attempt
 
         :param acc_list dict: [collection of accounts created for this session]
         :param u_acc BankCard: [the user account to check against the collection]
@@ -71,9 +64,7 @@ class Menu:
 
 
     def user_exit(self):
-        """
-        exit the session
-
+        """exit the session
         """
         print('Bye')
         exit()
