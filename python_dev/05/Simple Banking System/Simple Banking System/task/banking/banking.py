@@ -4,6 +4,12 @@ import sqlite3
 
 random.seed()
 
+conn = sqlite3.connect('card.s3db')
+
+cur = conn.cursor()
+cur.execute('CREATE TABLE card (id INTEGER, number TEXT, pin TEXT, balance INTEGER DEFAULT 0)')
+conn.commit()
+
 class BankAccount:
     IIN = '400000'
     def __init__(self):
@@ -61,7 +67,6 @@ while True:
         print(f'Your card has been created')
         print('Your card number:')
         print(u.user_id)
-        print(u.verify_checksum(u.user_id))
         print('Your card PIN:')
         print(u.user_pin)
         print()
@@ -89,6 +94,7 @@ while True:
             continue
 
         else:
+            
             print('You have successfully logged in!')
             print()
             while True:
