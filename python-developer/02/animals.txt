@@ -1,5 +1,0 @@
-Dog
-Cat
-Rabbit
-Sea turtle
-Penguin
