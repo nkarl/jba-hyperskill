@@ -1,6 +1,6 @@
-[submodule "jba-py-developer"]
-	path = python-developer
-	url = https://github.com/nkarl/jba-py-developer
 [submodule "python-developer"]
 	path = python-developer
 	url = https://github.com/nkarl/jba-py-developer
+[submodule "java-developer"]
+	path = java-developer
+	url = https://github.com/nkarl/jba-java-developer
