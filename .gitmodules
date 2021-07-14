@@ -7,3 +7,6 @@
 [submodule "web-developer"]
 	path = web-developer
 	url = https://github.com/nkarl/jba-web-developer
+[submodule "mobile-developer"]
+	path = mobile-developer
+	url = https://github.com/nkarl/jba-mobile-developer
